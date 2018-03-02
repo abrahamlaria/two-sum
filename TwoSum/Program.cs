@@ -53,16 +53,16 @@ namespace TwoSum
 
             Dictionary<int, int> dict = new Dictionary<int, int>();
 
-            for (int i = 0; i < nums.Length; i++)
+            for (var i = 0; i < nums.Length; i++)
             {
-                int complement = target - nums[i];
+                var complement = target - nums[i];
                 if (dict.ContainsKey(complement))
                 { 
                     return new[] {dict[complement], i};
                 }
                 dict.Add(nums[i], i);
             }
-            throw new ArgumentException("No two solution");
+            throw new ArgumentException("No two sum solution");
         }
         static void Main(string[] args)
         {
