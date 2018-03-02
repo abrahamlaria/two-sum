@@ -60,7 +60,14 @@ namespace TwoSum
                 { 
                     return new[] {dict[complement], i};
                 }
-                dict.Add(nums[i], i);
+                try
+                {
+                    dict.Add(nums[i], i);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(ex.Message);
+                }
             }
             throw new ArgumentException("No two sum solution");
         }
